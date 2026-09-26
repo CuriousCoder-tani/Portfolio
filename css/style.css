@@ -182,63 +182,86 @@ _________*/
 /* ___________
 Education 
 _______________*/
-#pole{
-    position: absolute;
-    width: 10px;
-    height: 75%;
-    margin-top: 2%;
-    background-color: #000;
-}
-.board{
-    position: absolute;
-    width:80%;
-    max-width: 450px;
-    height: 100%;
-    background-color: #b0b4f3;
-    border-radius: 25px;
-    box-shadow: 0 0 10px #000;
-    display: flex;
-    font-size: large;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-}
-.attach{
-    position: absolute;
-    width: 35%;
-    max-width: 88px;
-    height: 10%;
-    max-height: 20px;
-    background-color: #000;
-    top:50%
-}
-#school .board
-{
-    right:0px;
-}
-#college{
-    position: relative;
-    width: 80%;
-    height: 60vh;
-    max-height: 100px;
-    margin-top:50%;
-    margin-left:20%;
+.education-timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 0;
 }
 
-#school{
-    position: relative;
-    width: 80%;
-    height: 60vh;
-    max-height: 100px;
-    margin-top:20%;
-}
-#college .attach {
-    right: 0px; 
+/* Central vertical pole */
+.education-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 10px;
+  background-color: #000;
+  transform: translateX(-50%);
+  z-index: 1;
 }
 
-#school .attach {
-    left: 0px; 
+/* Each item block */
+.timeline-item {
+  position: relative;
+  width: 50%;
+  margin-bottom: 30px;
+  box-sizing: border-box;
 }
+
+/* Left-aligned items (MCA, School) */
+.timeline-item.left {
+  left: 0;
+  padding-right: 40px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Right-aligned items (BCA / College) */
+.timeline-item.right {
+  left: 50%;
+  padding-left: 40px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Signboards */
+.board {
+  width: 100%;
+  max-width: 380px;
+  min-height: 90px;
+  background-color: #b0b4f3;
+  border-radius: 25px;
+  box-shadow: 0 0 10px #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 15px;
+  z-index: 3;
+}
+
+/* Connecting bar to pole */
+.attach {
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 12px;
+  background-color: #000;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.timeline-item.left .attach {
+  right: 0;
+}
+
+.timeline-item.right .attach {
+  left: 0;
+}
+
 
 /* Contact */
 
